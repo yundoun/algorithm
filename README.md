@@ -1,2 +1,2 @@
 # codingTestPractice
-코테 연습 업로드
+알고리즘 문제 풀이
