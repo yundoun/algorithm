@@ -7,4 +7,5 @@ function solution(num_list) {
         reverse.push(tmp)
     }
     return reverse;
+    // const solution = (num_list) => num_list.reverse
 }
