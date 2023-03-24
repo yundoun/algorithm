@@ -25,3 +25,6 @@ int solution(vector<int> numbers) {
     
     return max * max2  ;
 }
+
+
+// 다른 사람들 풀이 : sort 함수를 사용하여 오름차순으로 정렬한 후 곱셈
