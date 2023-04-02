@@ -9,13 +9,13 @@ int main() {
 	cin >> B;
 	cin >> V;
 
-	answer = (V - A) / (A - B)+1;
+	answer = (V - A) / (A - B);
 
 	if ((V - A) % (A - B) == 0) {
-		cout << answer;
+		cout << answer+1;
 	}
 	else
-		cout << answer+1 ;
+		cout << answer+2 ;
 
 
 }
