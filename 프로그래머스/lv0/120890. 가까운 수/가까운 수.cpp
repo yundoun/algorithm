@@ -5,20 +5,20 @@ using namespace std;
 
 int solution(vector<int> array, int n) {
     int answer = 0;
+    int min = 101;
+    int e;
     
     sort(array.begin(), array.end());
     
-    if (array.size() == 1 ) return array[0];
-    if ( n < array.front() ) answer = array.front();
-    if (array.back() < n ) answer = array.back();
-    
-    for (int i =0; i<=array.size(); i++){
-        if ( n < array[i]) {
-            return (array[i]-n == n - array[i-1]) ? array[i-1] : (array[i]-n > n - array[i-1]) ? array[i-1] : array[i];
-                
+    for (int i =0; i<array.size(); i++ ){
+        e = array[i];
+        if (min > abs(n - e)){
+            min = abs(n - e);
+            answer  = e;
         }
+        if (min < abs(n-e) ) break;
+        
+        
     }
-    
-    
     return answer;
 }
