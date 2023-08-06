@@ -40,12 +40,6 @@ void solution() {
 		else h = h % 24;
 	}
 
-	//if (h >= 3600) {
-	//	h += h / 3600;
-	//	if (h == 60) { h = 0; }
-	//	else h = h % 60;
-	//	
-	//}
 }
 
 void solve() {
