@@ -7,9 +7,6 @@ using	namespace std;
 int t;		// 테스트 케이스
 int n;		// 전화번호의 수
 
-
-
-
 void input() {
 	cin >> t;
 }
@@ -26,7 +23,6 @@ void solution() {
 			vecNum.push_back(str);
 		}
 
-
 		sort(vecNum.begin(), vecNum.end()); // 벡터 정렬
 		bool flag = true;
 
@@ -37,8 +33,8 @@ void solution() {
 
 
 			flag = true;
-			if (cur.length() > next.length()) continue;
-			// 현재 문자열의 길이 > 다음 문자열의 길이 => 접두어가 될 수 없으므로 생략
+			//if (cur.length() > next.length()) continue;
+			//// 현재 문자열의 길이 > 다음 문자열의 길이 => 접두어가 될 수 없으므로 생략
 			if (cur == next.substr(0, cur.length())) {
 				flag = false;
 				break;
@@ -49,8 +45,6 @@ void solution() {
 
 	}
 }
-
-
 
 void solve() {
 	input();
