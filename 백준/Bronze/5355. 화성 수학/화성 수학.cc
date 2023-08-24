@@ -4,11 +4,15 @@
 #include <sstream>
 using namespace std;
 
-int T;
-char c;
+int main() {
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 
 
-void input() {
+	int T;
+	char c;
 	float n;
 	string  str;
 
@@ -37,28 +41,8 @@ void input() {
 		cout << fixed;
 		cout.precision(2);
 
-		cout << float(n) <<'\n';
+		cout << float(n) << '\n';
 	}
-
-
-}
-
-void solution() {
-
-}
-
-void solve() {
-	input();
-	solution();
-}
-
-int main() {
-
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-
-	solve();
 
 	return 0;
 
