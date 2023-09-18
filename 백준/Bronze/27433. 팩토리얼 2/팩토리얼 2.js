@@ -8,12 +8,14 @@ const input = fs
   .split("\n");
 
   const n = Number(input[0])
-  let sum = 1;
 
-  for (let i=0; i<n; i++){
-    sum = sum * (n-i)
+  const fc = (x) => {
+
+    return (x === 0 ) ? 1 : (x === 1 ) ? 1 : x * fc(x-1)
   }
 
-  console.log(sum)
+  console.log(fc(n))
+
+
 
 
