@@ -14,7 +14,7 @@ void input() {
 		string tmp = to_string(i);
 
 		for (int j = 0; j < tmp.size(); j++) {
-			sum += int(tmp[j])-'0';
+			sum += tmp[j]-'0';
 		}
 		sum += i;
 
