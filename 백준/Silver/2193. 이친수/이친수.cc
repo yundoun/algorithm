@@ -21,11 +21,7 @@ void solution() {
 	for (int i = 4; i <= N; i++) {
 		dp[i] = dp[i - 2] + dp[i - 1];
 	}
-
-	if (N == 1)cout << 1;
-	else if (N == 2)cout << 1;
-	else if (N == 3)cout << 2;
-	else cout << dp[N];
+	cout << dp[N];
 }
 
 void solve() {
