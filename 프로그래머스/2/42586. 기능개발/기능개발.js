@@ -21,7 +21,7 @@ function solution(progresses, speeds) {
         let cnt = 1;
         let max = remain[i];
         for (j = i+1; j<remain.length; j++){
-            // 앞선 작업보다 시간이 적게 걸리면 카운트
+            // 앞선 작업보다 시간이 적게 걸리면 카운트, 같은 날에 완료되는 경우까지 포함
             if (max >= remain[j]){
                 cnt++
             } 
@@ -31,6 +31,7 @@ function solution(progresses, speeds) {
             }
         }
         answer.push(cnt)
+        // 카운트 한 것은 제외하고 i가 돌아갈 수 있도록 초기화 해주기
         i = j-1
     }
     
