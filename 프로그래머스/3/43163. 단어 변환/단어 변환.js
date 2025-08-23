@@ -15,8 +15,7 @@ function solution(begin, target, words) {
     // 큐에는 비교하는 단어와 횟수, 처음엔 begin을 비교해야하니 넣어따
     let que = [[begin, 0]];
     // 어떤 단어를 통해 알파벳을 바꿨을때, 그 알파벳이 나오는 경우가 또 있으므로
-    // 굳이 또 순회할필요가 없기 때문에 중복 순회를 방지하기 위함
-    // 근데
+    // 굳이 또 순회할필요가 없기 때문에 중복 순회를 방지 ? 이해 x
     let visited = [];
 
     while (que.length > 0){
@@ -31,10 +30,6 @@ function solution(begin, target, words) {
                 // 순회하는건 배열에 넣어주기
                 // push하자 마자 방문처리해야 중복 안생긴다고함
                 visited.push(words[i])
-            }
-            // 두 글자 다르면
-            else{
-                continue
             }
         }
     }
