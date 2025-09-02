@@ -97,6 +97,8 @@ function solution(scoville, K) {
         heap.push(i);
     }
     
+    // heap클래스 내의 heap에 접근해야 해서 heap.heap임
+    // 뽑을게 없거나 타겟 넘으면 종료
     while(heap.heap.length >= 2 && heap.heap[0] < K){
         let x = heap.pop()
         let y = heap.pop()
@@ -104,5 +106,6 @@ function solution(scoville, K) {
         answer++
     }
     
+    // 예외처리
     return heap.heap[0] >= K ? answer : -1;
 }
