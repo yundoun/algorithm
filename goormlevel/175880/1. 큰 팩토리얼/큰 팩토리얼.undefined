@@ -1,0 +1,25 @@
+// Run by Node.js
+const readline = require('readline');
+
+(async () => {
+	let rl = readline.createInterface({ input: process.stdin });
+
+	let result = 1;
+	
+	for await (const line of rl) {
+
+		// n * n-1 ... 1
+
+		const n = Number(line)
+
+		for (let i = 1; i<=n; i++){
+			result = (result *  i) % 1000000007 
+		}
+		
+	console.log(result)
+		
+		rl.close();
+	}
+	
+	process.exit();
+})();
