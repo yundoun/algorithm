@@ -1,0 +1,32 @@
+// Run by Node.js
+const readline = require('readline');
+
+(async () => {
+	let rl = readline.createInterface({ input: process.stdin });
+
+	let N = ""
+	let cnt = 0;
+	let answer = [];
+	
+	for await (const line of rl) {
+		if (cnt === 0){
+			N = line
+			cnt++
+		}else{
+			// 일단 2차원 배열에 점수와 인덱스 + 1 한 값을 묶어서 넣는다.
+			const score = line.split(' ').map( (s, index) => [Number(s), index + 1 ])
+
+			// 그리고 첫 번째 원소의 값이 큰 순서대로 정렬한다.
+			const sortAry = score.sort((a, b) => b[0] - a[0])
+
+			// 정렬된 배열의 앞에서 3개의 두 번째 원소만 출력한다.
+			for (let i =0; i<3; i++){
+				answer.push(sortAry[i][1])
+			}			
+			console.log(answer.join(' '))
+		}
+	}
+
+	
+	process.exit();
+})();
