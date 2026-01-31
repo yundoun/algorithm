@@ -1,0 +1,31 @@
+// Run by Node.js
+const readline = require('readline');
+
+(async () => {
+	let rl = readline.createInterface({ input: process.stdin });
+
+	let cnt = 0;
+	let n = "";
+	let k ="";
+	let check = [];
+	
+	for await (const line of rl) {
+		if (cnt === 0){
+			// 첫 번째 줄
+			const parts = line.split(' ');
+			n = parts[0]
+			k = parts[1]
+			cnt++
+		}else{
+			// 두 번째 줄
+			// K가 배열 원소에 포함되었는지 include 함수로 비교하면 될거 같은데
+			const list = line.split(' ')
+			check = list.filter( n => !n.includes(k))
+		}
+	}
+	console.log(check.length)
+
+
+	
+	process.exit();
+})();
