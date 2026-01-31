@@ -1,0 +1,68 @@
+// Run by Node.js
+const readline = require('readline');
+
+(async () => {
+	let rl = readline.createInterface({ input: process.stdin });
+
+	let N = "";
+	let cnt = 0;
+	// 행사는 한 번 시작하면 중간에 종료 불가
+	// 행사 종료된 후 바로 행사 진행 불가능하고 1시간 정리하는 시간 가진 후 시작할 수 잌ㅅ음
+	// 시작 종료 시간 동일하면 시작하자마자 종료된 것
+	// 1. 시작 시간이 빠른것
+	// 2. 행시 시간이 짧은 것
+	// 3. 끝나는 시간이 빠른 것
+	// 여기서 3번을 생각을 바로 했어야함
+	let ary = []
+	for await (const line of rl) {
+		if (cnt === 0 ){
+			N = line	
+			cnt++
+		}else{
+			ary.push(line.split(' ').map(Number))
+		}
+	}
+	// 그럼이제 2차원 배열로 행사가 모두 들어가 졌을 거임
+	// 종료 시간이 빠른 것 대로 정렬해보자.
+	// a[0]: 현재 행사의 시작 시간
+  // a[1]: 현재 행사의 종료 시간
+	// 여기서 a, b는 배열을 의미함
+	ary.sort((a, b) => {
+		// 종료 시간이 같다면 시작 시간이 빠른걸로
+		if (a[1] === b[1]){
+			// 오름차순
+			return a[0] - b[0]
+		} else {
+			// 종료 시간 기준 오름차순
+			return a[1] - b[1]
+		}
+	})
+
+	let answer = 0;
+	let lastEndTime = -1;
+
+	// [ [ 1, 2 ], [ 2, 3 ], [ 4, 5 ], [ 3, 6 ], [ 1, 10 ], [ 11, 13 ] ]
+	for (let i =0; i<ary.length; i++){
+		let start = ary[i][0]
+		let end = ary[i][1]
+		if (lastEndTime <= start ){
+			lastEndTime = end
+			answer++
+			// 청소시간
+			lastEndTime++
+		}
+	}
+	console.log(answer)
+	
+	process.exit();
+})();
+
+
+
+
+
+
+
+
+
+
